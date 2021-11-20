@@ -24,14 +24,14 @@ function createFeatures(earthquakeData) {
         return magnitude * 3;
     }
     function getColor(d){
-        return d > 90 ? '#800026' :
-        d > 70  ? '#BD0026' :
-        d > 50  ? '#E31A1C' :
-        d > 30  ? '#FC4E2A' :
-        d > 10   ? '#FD8D3C' :
-                   '#FFEDA0';
+        return d > 90 ? '#FFEDA0'  :
+        d > 70  ?  '#FD8D3C' :
+        d > 50  ?  '#FC4E2A' :
+        d > 30  ? '#E31A1C' :
+        d > 10   ?  '#BD0026':
+        '#FFEDA0' ;
     }
-  
+    
 
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.place +
@@ -99,7 +99,7 @@ var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{
 
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [ 0, 10, 30, 50, 70, 90],
-        colors = ['#800026','#BD0026', '#E31A1C' ,'#FC4E2A' , '#FD8D3C', '#FFEDA0'];
+        colors = ['#FFEDA0', '#FD8D3C','#FC4E2A', '#E31A1C','#BD0026','#800026' ];
 
     
     for (var i = 0; i < grades.length; i++) {
